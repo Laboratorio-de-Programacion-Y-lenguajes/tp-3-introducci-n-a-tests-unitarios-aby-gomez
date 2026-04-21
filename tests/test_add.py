@@ -28,3 +28,15 @@ def test_add_suma_positivos():
 # ])
 # def test_add_parametrizado(a, b, expected):
 #     assert add(a, b) == expected
+
+def test_add_dos_negativos():
+    assert add(-1, -2) == -3
+
+def test_add_un_negativo_un_positivo():
+    assert add(-1, 2) == 1
+
+def test_add_con_cero():
+    assert add(-1, 0) == -1
+
+def test_add_dos_decimales():
+    assert add(-1.5, -3.2) == pytest.approx(-4.7)
