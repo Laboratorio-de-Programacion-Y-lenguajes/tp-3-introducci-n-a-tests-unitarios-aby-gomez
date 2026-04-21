@@ -22,3 +22,12 @@ def test_sqrt_cuadrado_perfecto():
 # def test_sqrt_negativo():
 #     with pytest.raises(ValueError):
 #         sqrt(-4)
+def test_sqrt_cero():
+    assert sqrt(0) == 0.0
+
+def test_sqrt_cuadrado_no_perfecto():
+    assert sqrt(3) == pytest.approx(1.732050)
+
+def test_sqrt_negativo():
+    with pytest.raises(ValueError):
+        sqrt(-4)
