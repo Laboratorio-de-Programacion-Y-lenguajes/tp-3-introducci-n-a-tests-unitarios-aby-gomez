@@ -23,3 +23,27 @@ def test_mean_lista_simple():
 # def test_mean_lista_vacia():
 #     with pytest.raises(ValueError):
 #         mean([])
+
+def test_mean_lista_unico_elemento():
+    
+    assert mean([6]) == 6.0
+
+@pytest.mark.parametrize("values,expected", [
+    ([-12, 4], -4.0),                    
+    ([12, -4], 4.0),
+    ([-12, -4], -8.0),
+
+])
+
+def test_mean_lista_numeros_negativos(values,expected):
+    
+    assert mean(values) == expected
+
+
+def test_lista_con_decimales():
+    
+    assert mean([1.5,2.3]) == pytest.approx(1.9)
+
+def test_lista_vacia():
+    with pytest.raises(ValueError):
+        mean([])
