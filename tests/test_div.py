@@ -22,3 +22,22 @@ def test_div_normal():
 # def test_div_por_cero():
 #     with pytest.raises(ZeroDivisionError):
 #         div(10, 0)
+
+def test_div_resultado_decimal():
+    assert div(1,2) == 0.5
+
+@pytest.mark.parametrize("a,b,expected", [
+    (-12, 4, -3),                    
+    (12, -4, -3),
+    (-12, -4, 3),
+
+])
+
+def test_div_negativos_parametrizado(a, b, expected):
+#                          ↑ recibe esos valores
+    assert div(a, b) == expected
+
+
+def test_div_por_cero():
+     with pytest.raises(ZeroDivisionError):
+         div(10, 0)
